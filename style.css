@@ -22,9 +22,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     padding: 1rem;
     border-radius: 1rem;
     background: var(--color-card);
@@ -32,6 +29,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
+}
+
+@media screen and (max-width: 600px){
+    .container {
+        width: 600px;
+        margin: 2rem 1.5rem;
+    }
+
+    .row > .card-headline, .row > .card-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
 }
 
 @media screen and (min-width: 600px) {
@@ -49,7 +59,16 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-label);
 }
 
-.card-icon {
+.card-h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-label);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+.card-headline-icon {
     display: grid;
     place-items: center;
     height: 3.5rem;
@@ -63,25 +82,33 @@ h1, h2, h3, h4, h5, h6 {
 .card-h2 {
     font-size: 1.75rem;
     font-weight: 500;
+    text-align: center;
 }
 
 .row {
     display: flex;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .card-list {
     display: flex;
-    gap: 1.75rem;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.75rem;
     width: 50%;
 }
 
 .card-list-item {
     display: flex;
+    justify-content: space-between;
     gap: 0.5rem;
 }
 
 .card-headline {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     width: 25%;
 }
 
@@ -90,7 +117,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 0.75rem;
     height: 0.75rem;
     border-radius: 50%;
-    
 }
 
 .card-list-badge.primary {
@@ -105,3 +131,94 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--color-default);
 }
 
+.card-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    gap: 2.5rem;
+}
+
+.card-progress-donut {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--color-primary) 0% 33%, 
+        var(--color-default) 33% 100%
+    );
+}
+
+.card-progress-donut::after {
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 85%;
+    height: 85%;
+    border-radius: inherit;
+    background:var(--color-card);
+}
+
+.card-growth {
+    width: 50%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.card-growth-headline {
+    margin-top: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    margin-top: 3.5rem;
+}
+
+.card-bar-chart > div {
+    display: grid;
+    place-items: end;
+    /* height: 5rem;
+    width: 1rem; */
+    background: var(--color-primary);
+}
+
+
+.card-bar-chart > div > div {
+    width: 1rem;
+}
+
+.card-bar-primary {
+    background:var(--color-primary);
+}
+
+.card-bar-default {
+    background:var(--color-default);
+}
+
+
+.loading-bar {
+    position: relative;
+    width: 100%;
+    height: .5rem;
+    background-color: var(--color-default);
+    border-radius: 1rem;
+}
+
+
+.loading-bar::after {
+    content: "";
+    position: absolute;
+    width: 64%;
+    height: inherit;
+    background-color: var(--color-primary);
+    border-radius: inherit;
+}
