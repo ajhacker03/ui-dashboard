@@ -237,7 +237,7 @@ h1, h2, h3, h4, h5, h6 {
     background:var(--color-default);
 }
 
-.card-authors {
+.card-authors, .card-activity {
     width: 50%;
 }
 
@@ -266,6 +266,11 @@ h1, h2, h3, h4, h5, h6 {
 .avatar {
     width: 3rem;
     height: 3rem;
+}
+
+li > img {
+    border: 3px solid var(--color-default);
+    border-radius: 50%;
 }
 
 .avatar-title, .avatar-notes {
@@ -299,4 +304,62 @@ h1, h2, h3, h4, h5, h6 {
     height: inherit;
     background-color: var(--color-primary);
     border-radius: inherit;
+}
+
+.timeline {
+    margin-top: 1.25rem;
+}
+
+.timeline-row {
+    position: relative;
+    display: flex;
+    gap: .75rem;
+    margin-bottom: .75rem;
+}
+
+.timeline-when {
+    width: 3.5rem;
+    height: 3.5rem;
+    min-width: 3.5rem;
+    max-height: 3.5rem;
+    font-size: 0.875rem;
+}
+
+.timeline-badge {
+    margin-top: 1.5px 0.5rem 0;
+    min-width: 0.75rem;
+    max-width: 0.75rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-default);
+    background: var(--color-card);
+}
+
+.timeline-row.primary .timeline-badge {
+    border: 3px solid var(--color-primary);
+}
+
+.timeline-badge::after {
+    position: absolute;
+    content: '';
+    top: 15px;
+    left: 4.75rem;
+    width: 2px;
+    height: 100%;
+    background-color: var(--color-default);
+}
+
+
+.timeline-text {
+    color: var(--color-label);
+    font-size: 0.875rem;
+}
+
+.timeline-row > span {
+    color: var(--color-label);
+}
+
+.timeline-row.primary .timeline-text, .timeline-row.primary .timeline-when{
+    color: var(--color-text);
 }
