@@ -1,0 +1,41 @@
+.container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, auto);
+    grid-template-areas:
+                        "headline1 headline2"
+                        "list list"
+                        "growth growth"
+                        "engagement engagement"
+                        "rating rating"
+                        "activity activity"
+                        "authors authors";
+    grid-gap: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        grid-template-areas:
+                        "headline1 headline2"
+                        "list list"
+                        "growth growth"
+                        "engagement rating"
+                        "activity activity"
+                        "authors authors";
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        width: 900px;
+        margin: 0 auto;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(12, auto);
+        grid-template-areas: 
+                        "headline1 headline2 list list"
+                        "engagement growth growth rating"
+                        "authors authors activity activity";
+    }
+}
+

@@ -1,56 +1,8 @@
-:root {
-    --color-primary: #44fd5d;
-    --color-accent: #fffffa;
-    --color-default: #363636;
-    --color-background: #242424;
-    --color-card: #1b1b1b;
-    --color-text: #f9f9f9;
-    --color-label: #aaaaaa;
-    --color-disabled: #888888;
-}
-
-body {
-    margin: 0;
-    background-color: var(--color-background);
-    font-family: 'Poppins', Arial, sans-serif;
-    color: var(--color-text);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    line-height: 1;
-}
-
 .card {
     padding: 1rem;
     border-radius: 1rem;
     background: var(--color-card);
     cursor: pointer;
-}
-
-.container {
-}
-
-@media screen and (max-width: 600px){
-    .container {
-        width: 600px;
-        margin: 2rem 1.5rem;
-    }
-
-    .row > .card-headline, .row > .card-list {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-}
-
-@media screen and (min-width: 600px) {
-    .container {
-        width: 900px;
-        margin: 0 auto;
-        padding: 1rem;
-    }
-
 }
 
 .card-h4 {
@@ -101,12 +53,14 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 0.75rem;
-    width: 50%;
+    grid-area: list;
+    display: flex;
+    gap: 1.75rem;
 }
 
 .card-list-item {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
 }
@@ -114,8 +68,15 @@ h1, h2, h3, h4, h5, h6 {
 .card-headline {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: 25%;
+    justify-content: space-between;
+}
+
+.card-headline1 {
+    grid-area: headline1;
+}
+
+.card-headline2 {
+    grid-area: headline2;
 }
 
 .card-list-badge {
@@ -138,11 +99,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-progress {
+    grid-area: engagement;
+    text-align: center; 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 25%;
     gap: 3.5rem;
 }
 
@@ -170,9 +132,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-growth {
-    width: 50%;
-    padding: 1rem;
+    /* width: 50%;
+    padding: 1rem; */
+    grid-area: growth;
     text-align: center;
+}
+
+.card-rating {
+    grid-area: rating;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3.5rem;
 }
 
 .card-circle {
@@ -237,8 +209,12 @@ h1, h2, h3, h4, h5, h6 {
     background:var(--color-default);
 }
 
-.card-authors, .card-activity {
-    width: 50%;
+.card-authors {
+    grid-area: authors;
+}
+
+.card-activity {
+    grid-area: activity;
 }
 
 .card-h3.no-bottom-margin {
